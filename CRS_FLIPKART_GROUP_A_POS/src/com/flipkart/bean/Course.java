@@ -4,7 +4,16 @@ public class Course {
     private String courseCode;
     private String courseName;
     private String instructorId;
-    private int maxSeats = 10 , minSeats = 3;
+    private int seats = 10;
+    
+    public Course(String courseCode, String courseName, String instructorId, int seats) 
+	{
+		super();
+		this.courseCode = courseCode;
+		this.courseName = courseName;
+		this.setInstructorId(instructorId);
+		this.seats = seats;
+	}
 
     public String getCourseCode() {
         return courseCode;
