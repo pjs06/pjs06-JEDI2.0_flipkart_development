@@ -8,6 +8,13 @@ public class AdminCRSMenu {
 		
 		System.out.println("Admin Menu");
 		int i = 1;
+		System.out.println("Type 1 to view Course Catalogue");
+		System.out.println("     2 to add Course");
+		System.out.println("     3 to delete course");
+		System.out.println("     4 to approve student");
+		System.out.println("     5 to view pending admissions");
+		System.out.println("     6 to add professor");
+		System.out.println("     7 to assign Course to professor");
 		while(i < 5) {
 			int choice = scanner.nextInt();
 			

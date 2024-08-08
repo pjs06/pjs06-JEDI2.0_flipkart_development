@@ -23,6 +23,14 @@ public class StudentCRSMenu {
 	public void createMenu(String studentId)
 	{
 		System.out.println("Student Menu");
+		System.out.println("Type 1 to register for courses");
+		System.out.println("     2 to add courses");
+		System.out.println("     3 to drop course");
+		System.out.println("     4 to view courses");
+		System.out.println("     5 to view registered course");
+		System.out.println("     6 to view grade card");
+		System.out.println("     7 to make payment");
+//		
 //		is_registered = getRegistrationStatus(studentId);
 //		while (CRSApplication.loggedin) 
 //		{

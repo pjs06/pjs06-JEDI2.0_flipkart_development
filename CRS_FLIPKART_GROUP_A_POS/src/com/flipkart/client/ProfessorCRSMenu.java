@@ -8,6 +8,12 @@ public class ProfessorCRSMenu {
 	public void createMenu(String profId) {
 		int input;
 		System.out.println("Professor Menu");
+		
+		System.out.println("Type 1 to view courses");
+		System.out.println("     2 to view students");
+		System.out.println("     3 to add grades");
+		System.out.println("     4 to logout");
+		
 		int i =1;
 		while(i < 5) {
 			input=sc.nextInt();
