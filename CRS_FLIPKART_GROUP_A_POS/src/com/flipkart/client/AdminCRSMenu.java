@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class AdminCRSMenu {
 	Scanner scanner = new Scanner(System.in);
 	public void createMenu() {
+		
+		System.out.println("Admin Menu");
 		int i = 1;
 		while(i < 5) {
 			int choice = scanner.nextInt();

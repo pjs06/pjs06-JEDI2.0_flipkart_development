@@ -32,7 +32,7 @@ public class CRSApplication {
 					crsApplication.updatePassword();
 					break;
 				default:
-					System.out.println("Invalid Input");;
+					System.out.println("Invalid Input");
 			}
 			createMainMenu();
 			userInput=sc.nextInt();
@@ -63,25 +63,28 @@ public class CRSApplication {
 		System.out.println("Password:");
 		password=sc.next();
 		System.out.println("UserRole:");
+		System.out.println("Type A for Admin");
+		System.out.println("     P for Professor");
+		System.out.println("     S for Student");
 		userRole=sc.next();
 		switch(userRole)
 		{
-		case ADMIN:
-            System.out.println(" Login Successful");
+		case "A":
+            System.out.println("Login Successful");
 			AdminCRSMenu adminMenu=new AdminCRSMenu();
 			adminMenu.createMenu();
 			break;
-		case PROFESSOR:
-			System.out.println(" Login Successful");
+		case "P":
+			System.out.println("Login Successful");
 			ProfessorCRSMenu professorMenu=new ProfessorCRSMenu();
 			professorMenu.createMenu(userId);
 			
 			break;
-		case STUDENT:
+		case "S":
 			
-			System.out.println(" Login Successful");
+			System.out.println("Login Successful");
 			StudentCRSMenu studentMenu=new StudentCRSMenu();
-			studentMenu.createMenu();
+//			studentMenu.createMenu();
 			break;
 		}
 	}
@@ -91,8 +94,8 @@ public class CRSApplication {
 		System.out.println("Welcome to CRS Application");
 		System.out.println("Press 1:- Login");
 		System.out.println("Press 2:- Registration of the student");
-		System.out.println("Press 1:- Update password");
-		System.out.println("Press 1:- exit");
+		System.out.println("Press 3:- Update password");
+		System.out.println("Press 4:- exit");
 		
 	}
 }
