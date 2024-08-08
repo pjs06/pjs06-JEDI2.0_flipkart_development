@@ -6,16 +6,21 @@ public class AdminCRSMenu {
 	Scanner scanner = new Scanner(System.in);
 	public void createMenu() {
 		
-		System.out.println("Admin Menu");
-		int i = 1;
-		System.out.println("Type 1 to view Course Catalogue");
-		System.out.println("     2 to add Course");
-		System.out.println("     3 to delete course");
-		System.out.println("     4 to approve student");
-		System.out.println("     5 to view pending admissions");
-		System.out.println("     6 to add professor");
-		System.out.println("     7 to assign Course to professor");
-		while(i < 5) {
+		
+		
+		boolean exit = false;
+		while(!exit) {
+			System.out.println("Admin Menu");
+			
+			System.out.println("Type 1 to view Course Catalogue");
+			System.out.println("     2 to add Course");
+			System.out.println("     3 to delete course");
+			System.out.println("     4 to approve student");
+			System.out.println("     5 to view pending admissions");
+			System.out.println("     6 to add professor");
+			System.out.println("     7 to assign Course to professor");
+			
+			
 			int choice = scanner.nextInt();
 			
 			switch(choice) {
@@ -36,24 +41,20 @@ public class AdminCRSMenu {
 				break;
 			
 			case 5:
-				viewPendingAdmissions();
-				break;
-			case 6:
 				addProfessor();
 				break;
-			
-			case 7:
+			case 6:
 				assignCourseToProfessor();
 				break;
 			
-			case 8:
-				
+			case 7:
+				exit = true;
 				return;
 
 			default:
 				System.out.println("Incorrect option");
 			}
-			i++;
+			
 			
 		}
 	}
@@ -66,10 +67,6 @@ public class AdminCRSMenu {
 		
 	}
 	
-	private void viewPendingAdmissions() {
-		// TODO Auto-generated method stub
-		
-	}
 	private void approveStudent() {
 		// TODO Auto-generated method stub
 		
