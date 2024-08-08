@@ -62,7 +62,7 @@ public class CRSApplication {
 		userId=sc.next();
 		System.out.println("Password:");
 		password=sc.next();
-		System.out.println("UserRole:");
+		System.out.println("UserRole:");	
 		System.out.println("Type A for Admin");
 		System.out.println("     P for Professor");
 		System.out.println("     S for Student");
@@ -84,7 +84,7 @@ public class CRSApplication {
 			
 			System.out.println("Login Successful");
 			StudentCRSMenu studentMenu=new StudentCRSMenu();
-//			studentMenu.createMenu();
+			studentMenu.createMenu(userId);
 			break;
 		}
 	}

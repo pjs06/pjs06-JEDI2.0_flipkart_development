@@ -7,6 +7,7 @@ public class ProfessorCRSMenu {
 
 	public void createMenu(String profId) {
 		int input;
+		System.out.println("Professor Menu");
 		int i =1;
 		while(i < 5) {
 			input=sc.nextInt();
