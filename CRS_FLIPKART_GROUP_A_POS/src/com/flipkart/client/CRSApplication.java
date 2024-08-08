@@ -2,10 +2,11 @@ package com.flipkart.client;
 
 import java.util.Scanner;
 
-public class CRSApplication {
-	private static final String ADMIN = null;
+import com.flipkart.business.StudentOperations;
 
-	public static void main(String[] args) {
+public class CRSApplication {
+	
+		public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 		CRSApplication crsApplication=new CRSApplication();
@@ -47,10 +48,40 @@ public class CRSApplication {
 		
 	}
 
-	private void registerStudent() {
-		// TODO Auto-generated method stub
+	public void registerStudent()
+	{
+		Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter student's name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter student's user ID: ");
+        String userID = sc.nextLine();
+
+        System.out.print("Enter student's password: ");
+        String password = sc.nextLine();
+
+        // System.out.print("Enter student's batch: ");
+        // int batch = Integer.valueOf(sc.nextLine());
+       
+
+        System.out.print("Enter student's branch: ");
+        String branch = sc.nextLine();
+
+        System.out.print("Enter student's address: ");
+        String address = sc.nextLine();
+
+        System.out.print("Enter student's country: ");
+        String country = sc.nextLine();
+        
+        
+        StudentOperations studentOperations = new StudentOperations();
+		studentOperations.addStudent(name, userID, password, 123, branch, address, country);
+        System.out.println("Student added successfully.");
+	
 		
 	}
+	
 
 	public void loginUser() {
 		// TODO Auto-generated method stub
