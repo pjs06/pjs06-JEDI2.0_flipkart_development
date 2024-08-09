@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class ProfessorOperations {
+public class ProfessorOperations implements ProfessorInterface{
 	private List<Professor> professors;
 	private AdminOperations adminOps;
 	private StudentOperations studentOps;
 	private List<Grade> grades;
+
 	public ProfessorOperations() {
 		professors = new ArrayList<>();
 		professors.add(new Professor("avinash", "avinash", "professor", "1234", 1, "CS", "Senior"));

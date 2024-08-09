@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class AdminOperations {
+public class AdminOperations implements AdminInterface{
 	private List<Admin> admins;
 	private List<Course> courseCatalogue;
 	private List<Professor> professors;

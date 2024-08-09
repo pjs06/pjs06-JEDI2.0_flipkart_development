@@ -6,9 +6,10 @@ import com.flipkart.bean.Student;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentOperations {
+public class StudentOperations{
 	private List<Student> students;
 	private AdminOperations adminOps;
+	
 
 public StudentOperations(){
 	students = new ArrayList<>();
