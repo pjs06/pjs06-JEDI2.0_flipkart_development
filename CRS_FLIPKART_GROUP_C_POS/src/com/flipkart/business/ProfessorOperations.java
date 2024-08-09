@@ -4,11 +4,9 @@ import com.flipkart.bean.Course;
 import com.flipkart.bean.Grade;
 import com.flipkart.bean.Professor;
 import com.flipkart.bean.Student;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class ProfessorOperations {
 	private List<Professor> professors;
@@ -17,8 +15,8 @@ public class ProfessorOperations {
 	private List<Grade> grades;
 	public ProfessorOperations() {
 		professors = new ArrayList<>();
-		professors.add(new Professor("parth1", "parth", "professor", "pass", 1, "CS", "Senior"));
-		professors.add(new Professor("ansh1", "ansh", "professor", "pass", 2, "CS", "Senior"));
+		professors.add(new Professor("avinash", "avinash", "professor", "1234", 1, "CS", "Senior"));
+		professors.add(new Professor("ashnoor", "ashnoor", "professor", "1234", 2, "CS", "Associate"));
 		grades = new ArrayList<>();
 		adminOps = new AdminOperations();
 		studentOps = new StudentOperations();
@@ -53,21 +51,9 @@ public class ProfessorOperations {
 	}
 
 	public void addGrade(Integer studentID, String courseID, String alphaGrade) {
-//		grades.add(new Grade(studentID, courseID, alphaGrade));
-//		System.out.println("Grade added successfully for student ID: " + studentID);
+
 	}
-//	public void viewEnrolledStudents(String courseID) {
-//		List<Student> students = adminOps.getCourseCatalogue().stream()
-//				.filter(course -> course.getCourseID().equals(courseID))
-//				.flatMap(course -> course.getEnrolledStudents().stream()
-//						.map(studentId -> adminOps.findStudentById(studentId)))
-//				.toList();
-//
-//		System.out.println("Students enrolled in course " + courseID + ":");
-//		for (Student student : students) {
-//			System.out.println(student.getStudentID() + " - " + student.getName());
-//		}
-//	}
+
 	public void viewEnrolledStudents(String courseID) {
 		// Fetch the course by courseID
 		Course course = adminOps.getCourseCatalogue().stream()

@@ -1,9 +1,7 @@
 package com.flipkart.client;
 
 import com.flipkart.bean.Payment;
-import com.flipkart.bean.GradeCard;
 import com.flipkart.business.StudentOperations;
-
 import java.util.Scanner;
 
 public class CRSStudentMenu {
@@ -24,15 +22,13 @@ public class CRSStudentMenu {
 			System.out.println("\nChoose an option from the menu: ");
 			System.out.println("---------------------------------------");
 			System.out.println("Press 1: Course Registeration");
-			System.out.println("Press 2: Add Course to cart");
+			System.out.println("Press 2: Add Course");
 			System.out.println("Press 3: Drop Course");
-			System.out.println("Press 4: Finish registration ");
-			System.out.println("Press 5: View Registered Courses");
-			System.out.println("Press 6: View Report Card");
-			System.out.println("Press 7: Check Payment Window");
-			System.out.println("Press 8: Do Payment");
-			System.out.println("Press 9: Logout");
-			System.out.println("*********************************************************");
+			System.out.println("Press 4: View Registered Courses");
+			System.out.println("Press 5: View Performance Report");
+			System.out.println("Press 6: Payment");
+			System.out.println("Press 7: Logout");
+			System.out.println("---------------------------------------");
 			input =sc.nextInt();
 			switch (input) {
 			case 1:
@@ -44,27 +40,19 @@ public class CRSStudentMenu {
 			case 3:
 				dropCourse(studentId);
 				break;
-
 			case 4:
-				finishRegistration(studentId);
-				break;
-			case 5:
 				viewRegisteredCourses(studentId);
 				break;
-			case 6:
+			case 5:
 				viewReportCard(studentId);
 				break;
-			case 7:
-				checkPaymentWindow(studentId);
-				break;
-			case 8:
+			case 6:
 				doPayment(studentId);
 				break;
-			case 9:
-//				System.exit(0);
+			case 7:
 				return;
 			default:
-				System.out.println("***** Wrong Choice *****");
+				System.out.println("----Enter Correct Choice-----");
 			}
 		}
 	}
@@ -83,37 +71,17 @@ public class CRSStudentMenu {
 		System.out.println("Payment processed.");
 	}
 
-	private void checkPaymentWindow(int studentId) {
-		Boolean isOpen = studentOperations.checkPaymentWindow(studentId);
-		if (isOpen) {
-			System.out.println("Payment window is open.");
-		} else {
-			System.out.println("Payment window is closed.");
-		}
-	}
 
 	private void viewReportCard(int studentId) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Semester ID: ");
 		int semesterId = sc.nextInt();
-//		GradeCard gradeCard = studentOperations.viewReportCard(studentId, semesterId);
-//		if (gradeCard != null) {
-//			// Print or process the GradeCard details
-//			System.out.println("Grade Card Details:");
-//			// Assuming GradeCard has a method to display details
-//			// System.out.println(gradeCard.getDetails());
-//		} else {
-//			System.out.println("Report Card not found.");
-//		}
 	}
 
 	private void viewRegisteredCourses(int studentId) {
 		studentOperations.viewRegisteredCourses(studentId); // Assuming semesterId 0 or as needed
 	}
 
-	private void finishRegistration(int studentId) {
-		studentOperations.finishRegistration();
-	}
 
 	private void dropCourse(int studentId) {
 		Scanner sc = new Scanner(System.in);

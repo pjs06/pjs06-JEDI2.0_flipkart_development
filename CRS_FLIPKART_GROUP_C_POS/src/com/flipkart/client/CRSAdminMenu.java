@@ -1,10 +1,7 @@
 package com.flipkart.client;
 
-import com.flipkart.bean.Admin;
-import com.flipkart.bean.Course;
 import com.flipkart.bean.Professor;
 import com.flipkart.business.AdminOperations;
-
 import java.util.Scanner;
 
 public class CRSAdminMenu {
@@ -30,7 +27,7 @@ public class CRSAdminMenu {
 			System.out.println("Press 6: Send Pay Notification");
 			System.out.println("Press 7: View approved Students");
 			System.out.println("Press 8: Logout");
-			System.out.println("*********************************************************");
+			System.out.println("---------------------------------------");
 			input =sc.nextInt();
 			switch (input) {
 			case 1:
@@ -74,10 +71,7 @@ public class CRSAdminMenu {
 
 	}
 
-//	private void viewReportCard(String adminId) {
-//
-//
-//	}
+
 
 	private void removeProfessor(String adminId) {
 		// TODO Auto-generated method stub
@@ -108,7 +102,7 @@ public class CRSAdminMenu {
 	}
 
 	private void removeCourse(String adminId) {
-		// TODO Auto-generated method stub
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Course ID to remove: ");
 		String courseId = sc.nextLine();

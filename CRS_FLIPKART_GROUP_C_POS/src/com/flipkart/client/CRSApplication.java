@@ -9,12 +9,12 @@ import com.flipkart.bean.Student;
 import com.flipkart.business.AdminOperations;
 import com.flipkart.business.ProfessorOperations;
 import com.flipkart.business.StudentOperations;
-
 import java.util.Scanner;
 
 /**
  * 
  */
+
 public class CRSApplication {
 	private StudentOperations studentOps ;
 	private ProfessorOperations profOps ;
@@ -36,18 +36,14 @@ public class CRSApplication {
 	private void showMenu() {
 
 		while (true) {
-			System.out.println("\n************* Welcome to CRS Application *************\n");
-			System.out.println("\nChoose an option from the menu: ");
+			System.out.println(" Welcome to CRS Application ");
+			System.out.println("Select operation: ");
 			System.out.println("---------------------------------------");
 			System.out.println("Press 1: Login");
 			System.out.println("Press 2: Student Registration");
 			System.out.println("Press 3: Update Password");
-			System.out.println("Press 4: Add Student");
-			System.out.println("Press 5: Show all students");
-			System.out.println("Press 6: Add Professor");
-			System.out.println("Press 7: Show all professors");
-			System.out.println("Press 8: Exit ");
-			System.out.println("*********************************************************");
+			System.out.println("Press 4: Exit ");
+			System.out.println("---------------------------------------");
 			int menuOption = sc.nextInt();
 			sc.nextLine();
 				switch (menuOption) {
@@ -62,35 +58,16 @@ public class CRSApplication {
 					case 3:
 						updatePassword();
 						break;
-
+						
 					case 4:
-						addStudent();
-						break;
-					case 5:
-						showAllStudents();
-						break;
-					case 6:
-						addProfessor();
-						break;
-					case 7:
-						showAllProfessors();
-						break;
-					case 8:
 						sc.close();
-						System.out.println("Exited Successfully!");
+						System.out.println("Exit Successful!");
 						return;
 					default:
 						System.out.println("Invalid input");
 						break;
 			}
 		}
-	}
-
-	private void showAllStudents(){
-		studentOps.viewStudents();
-	}
-	private void showAllProfessors(){
-		profOps.viewProfessors();
 	}
 
 
@@ -100,18 +77,20 @@ public class CRSApplication {
 		String password=null;
 		String role = null;
 
-		System.out.println("********************************");
-		System.out.println("Enter your Username: ");
+		
+		System.out.println("Enter Username: ");
 		username = sc.nextLine();
-		System.out.println("Enter your Password: ");
+		System.out.println("Enter Password: ");
 		password = sc.nextLine();
 		System.out.println("Choose your Role: ");
 		System.out.println("Press 1 for Student");
 		System.out.println("Press 2 for Professor");
 		System.out.println("Press 3 for Admin");
+		
 
 		int roleOption = sc.nextInt();
 		switch (roleOption) {
+		
 		case 1:
 			role = "student";
 			break;
@@ -124,42 +103,41 @@ public class CRSApplication {
 			role = "admin";
 			break;
 		default:
-			System.out.println("Invalid option");
+			System.out.println("Invalid");
 		}
 		switch (role) {
 		case "student":
-			System.out.println("********************************");
-			System.out.println("Logged In Successfully as a Student");
-			System.out.println("Welcome " + username + " !!");
+			System.out.println();
+			System.out.println("Logged In Successfully as a Student with a username: " + username);
 
             CRSStudentMenu stud = new CRSStudentMenu();
 
 			Integer StudID= studentOps.getStudentIdByUsername(username);
             stud.CreateStudentMenu(StudID);
-			System.out.println("Welcome " + username + " !!");
+			System.out.println("Hi " + username + " !!");
 			break;
 
 		case "professor":
-			System.out.println("********************************");
+			System.out.println();
 			System.out.println("Logged In Successfully as a Professor");
-			System.out.println("Welcome " + username +" Sir!");
+			System.out.println("Hi " + username +" Sir!");
             CRSProfessorMenu prof = new CRSProfessorMenu();
             prof.CreateProfessorMenu(username);
-			System.out.println("Welcome " + username + " Sir!");
+			System.out.println("Hi Professor" + username);
 			break;
 
 		case "admin":
-			System.out.println("********************************");
+			System.out.println();
 			System.out.println("Logged In Successfully as an Admin");
-			System.out.println("Welcome " + username + " !!");
+			System.out.println("Hi " + username + " !!");
             CRSAdminMenu adm = new CRSAdminMenu();
             adm.CreateAdminMenu(username);
-			System.out.println("Welcome " + username + " Sir!");
+			System.out.println("Hi " + username);
 			break;
 
 		default:
 			System.out.println("Invalid Role");
-			System.out.println("********************************");
+			System.out.println();
 		}
 	}
 	void registerStudent() {
@@ -180,7 +158,7 @@ public class CRSApplication {
 		if(studentOps.addStudent(username,name,"student",password,studentID,department)){
 			System.out.println("Student Added Successfully");
 		}else{
-			System.out.println("student already exists");
+			System.out.println("Student already exists");
 		}
 	}
 	void addProfessor() {

@@ -1,13 +1,10 @@
 package com.flipkart.business;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import com.flipkart.bean.Course;
-import com.flipkart.bean.GradeCard;
 import com.flipkart.bean.Payment;
 import com.flipkart.bean.Student;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StudentOperations {
 	private List<Student> students;
@@ -17,11 +14,11 @@ public StudentOperations(){
 	students = new ArrayList<>();
 	adminOps= new AdminOperations();
 	ArrayList<String> courses = new ArrayList<>();
-	courses.add("C101");
-	courses.add("C102");
-	students.add(new Student("nikhil1", "nikhil", "student", "pass", 102, "CS", courses));
-	students.add(new Student("ajey1","ajey","student","pass",101,"CS",null));
-	students.add(new Student("kunal1","kunal","student","pass",103,"CS",null));
+	courses.add("F101");
+	courses.add("F102");
+	students.add(new Student("Preet", "preet", "student", "1234", 101, "CS", courses));
+	students.add(new Student("Ashray","Ashray","student","1234",102,"CS",null));
+	students.add(new Student("Sanju","Sanju","student","1234",103,"CS",null));
 }
 
 	public List<Student> getStudents() {
@@ -44,24 +41,6 @@ public StudentOperations(){
 		return null;
 	}
 
-//	public void registerCourses(int studentId, String courseId) {
-//		Student student = findStudentById(studentId);
-//		List<Course> availableCourses = adminOps.getCourseCatalogue();
-//		if (student != null) {
-//			for (Course course : availableCourses) {
-//				if (course.getCourseID().equals(courseId) && course.isOffered() && course.getAvailableSeats() > 0) {
-//					student.getRegisteredCourses().add(courseId);
-//					course.setAvailableSeats(course.getAvailableSeats() - 1);
-//					System.out.println("Course registered successfully.");
-//					return;
-//				}
-//			}
-//			System.out.println("Course not found.");
-//		} else {
-//			System.out.println("Student not found.");
-//		}
-//
-//	}
 	public void registerCourses(int studentId, String courseId) {
 		Student student = findStudentById(studentId);
 		Course course = findCourseById(courseId);
@@ -77,24 +56,7 @@ public StudentOperations(){
 			System.out.println("Student or Course not found.");
 		}
 	}
-//	public boolean addCourse(int studentId, String courseId) {
-//		Student student = findStudentById(studentId);
-//		List<Course> availableCourses = adminOps.getCourseCatalogue();
-//		if (student != null) {
-//			for (Course course : availableCourses) {
-//				if (course.getCourseID().equals(courseId) && course.isOffered() && course.getAvailableSeats() > 0) {
-//					student.getRegisteredCourses().add(courseId);
-//					course.setAvailableSeats(course.getAvailableSeats() - 1);
-//					System.out.println("Course added successfully.");
-//					return true;
-//				}
-//			}
-//			System.out.println("Course not found.");
-//		} else {
-//			System.out.println("Student not found.");
-//		}
-//		return false;
-//	}
+
 	public void addCourse(int studentId, String courseId) {
 		Student student = findStudentById(studentId);
 		Course course = findCourseById(courseId);
@@ -116,28 +78,7 @@ public StudentOperations(){
 		}
 }
 
-//	public boolean dropCourse(int studentId, String courseId) {
-//		Student student = findStudentById(studentId);
-//
-//		if (student != null) {
-//			System.out.println(student.getUserName());
-//			for (String it: student.getRegisteredCourses()) {
-//				if (it.equals(courseId)) {
-//					student.getRegisteredCourses().remove(it);
-//					Course courseObj = findCourseById(courseId);
-//					if (courseObj != null) {
-//						courseObj.setAvailableSeats(courseObj.getAvailableSeats() + 1);
-//						System.out.println("Course dropped successfully.");
-//						return true;
-//					}
-//				}
-//			}
-//			System.out.println("Course not found in Student list.");
-//		} else {
-//			System.out.println("Student not found.");
-//		}
-//		return false;
-//	}
+
 public void dropCourse(int studentId, String courseId) {
 	Student student = findStudentById(studentId);
 	Course course = findCourseById(courseId);
@@ -169,12 +110,6 @@ public void dropCourse(int studentId, String courseId) {
 		return newAvailableCourses;
 	}
 	public void viewReportCard(int studentID, int semesterId) {
-//		Student student = findStudentById(studentID);
-//		if (student != null) {
-//			return student.getGradeCard();
-//		}
-//		System.out.println("Student not found.");
-//		return null;
 		return;
 	}
 	public Boolean checkPaymentWindow(int StudentID) {
@@ -210,8 +145,8 @@ public void dropCourse(int studentId, String courseId) {
 				return student.getStudentID();
 			}
 		}
-		// Return a special value or throw an exception if username is not found
-		return -1; // Indicating that the username was not found
+		
+		return -1; 
 	}
 	public Course findCourseById(String courseId) {
 		List<Course> availableCourses = adminOps.getCourseCatalogue();
